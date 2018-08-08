@@ -1,16 +1,16 @@
-var QuestionOne = prompt("Ваш бюджет на месяц?");
-var QuestionTwo = prompt("Название вашего магазина?");
-var ItemNameOne = prompt("Какой тип товаров будем продавать?");
-var ItemNameTwo = prompt("Какой тип товаров будем продавать?");
-var ItemNameTree = prompt("Какой тип товаров будем продавать?");
+var yourBudget = prompt("Ваш бюджет на месяц?");
+var shopName = prompt("Название вашего магазина?");
+var itemTypeOne = prompt("Какой тип товаров будем продавать?");
+var itemTypeTwo = prompt("Какой тип товаров будем продавать?");
+var itemTypeTree = prompt("Какой тип товаров будем продавать?");
 
-	mainList = {
-		budget:QuestionOne,
-		name:QuestionTwo,
-		shopGoods: [ItemNameOne,ItemNameTwo,ItemNameTree],
-		employers:{
+mainList = {
+budget:yourBudget,
+name:shopName,
+shopGoods: [itemTypeOne,itemTypeTwo,itemTypeTree],
+employers:{
 
-		},
-		open:true
-	}
-	alert(QuestionOne/30);
+},
+open:true
+}
+alert(yourBudget/30);
