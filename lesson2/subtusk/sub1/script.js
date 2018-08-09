@@ -19,9 +19,7 @@ let week = ["Понедельник","Вторник","Среда","Четвер
 
 let arr =["734623482","4312421","332355","41","12411","71","33"];
 for(let i = 0; i < arr.length; i++){
-	for(let j = 0; j < arr[i].length-(arr[i].length-1); j++){
 	if(arr[i][0]== "3" || arr[i][0]== "7"){
 		console.log(arr[i]);
 	}
 	}
-}
