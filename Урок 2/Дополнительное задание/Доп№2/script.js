@@ -1,0 +1,12 @@
+console.log("5");
+console.log("nan");
+console.log("2");
+console.log("12");
+console.log("1");
+console.log("null");
+console.log("да");
+console.log("3");
+console.log("нет");
+console.log("Infinity");
+console.log("да");
+console.log("2");
