@@ -23,7 +23,7 @@ start();
 	name:shopName,
 	shopGoods: [],
 	employers:{
-		employee:[]
+		// employee:[]
 	},
 	open: false,
 	discount: false
@@ -70,12 +70,13 @@ function workTime(time){
 discounter();
 	
 	function hire(){
+	let b = mainList.employers; 
 	for(let i = 1; i <= 4; i++){
 
-	let a = prompt("Назовите номер и имя сотрудника",i + "-");	
+	let a = prompt("Назовите номер и имя сотрудника");	
      
      if((typeof(a)) === 'string'  && a != null && a != '' && a.length < 50){
-			mainList.employers.employee[i] = a;
+			b[i] = a ;
 			}else{
 				i--;
 			}
@@ -83,7 +84,6 @@ discounter();
 }
 
 hire();
-
 
 	console.log(mainList);
 	alert("Ежедневный бюджет " + yourBudget/30);
