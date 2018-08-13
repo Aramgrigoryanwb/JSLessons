@@ -99,8 +99,6 @@ let yourBudget,
 	}
 
 mainList.chooseShopItems();
-
-				
-
 mainList.availability();
-	console.log(mainList);
+console.log(mainList.include());
+console.log(mainList);

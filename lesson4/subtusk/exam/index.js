@@ -13,7 +13,7 @@ function getFriendlyNumbers(start, end) {
 					let add = getDivSum(start);	
 					let addTwo = getDivSum(add);
 
-					if(start == addTwo && start != add && start < add){
+					if(start == addTwo && start != add && start < add && end >= add){
 						 let y = [start, add];
 						a.push(y);
 					}
@@ -21,6 +21,9 @@ function getFriendlyNumbers(start, end) {
 				}
 	}else{
 		return false;
+	}
+	if (a.length == 0) {
+		console.log("Нет дружественных чисел");
 	}
     return a;
 }
