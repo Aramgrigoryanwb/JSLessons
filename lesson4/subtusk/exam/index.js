@@ -8,6 +8,7 @@ function getFriendlyNumbers(start, end) {
  		}else if(start >= 284 && end <= 500 ){
  				return []
  			}else{
+
  			for (start; start < end; start++){
 					let add = getDivSum(start);	
 					let addTwo = getDivSum(add);
@@ -17,6 +18,7 @@ function getFriendlyNumbers(start, end) {
 						a.push(y);
 					}
 					}
+				}
 	}else{
 		return false;
 	}
