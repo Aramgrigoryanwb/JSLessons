@@ -32,16 +32,20 @@ function appendZero(date){
 }
 
 appendZero(date);
+ function input(){
+ 	let dateDay = document.getElementById('date_day').value;
+ 	let dateDay1 = document.getElementById('date_day1').value;
+ 	let dateMonth = document.getElementById('date_month').value;
+ 	let dateMonth1 = document.getElementById('date_month1').value;
+ 	let dateYear = document.getElementById('date_year').value;
+ 	let dateYear1 = document.getElementById('date_year1').value;
+	let date1 = new Date(dateYear, dateMonth, dateDay); 
+	let date2 = new Date(dateYear1, dateMonth1, dateDay1); //2011, 1, 27
+ 
+	let difference = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
 
-// let dateDay = document.getElementById('date-day');
-// 	console.log(dateDay[0]);
-//     console.log(dateDay[1]);
+	document.getElementById("result").value = difference;
 
-let date1 = new Date(2011, 0, 1);
-let date2 = new Date(2011, 0, 12);
-
-let difference = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
-console.log(difference);
-
-
+ }
+ 
 

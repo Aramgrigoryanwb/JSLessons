@@ -6,10 +6,16 @@
 </head>
 <body>
 	<div class="date">Введите дату</div>
-			<input  type="datetime-local" id="date-day" onchange="">
-			<input   type="datetime-local" id="date-day"  onchange="">
-			<input   type="button" value="Рассчитать">
-			<input   type="text" id="date-day"  onchange="are">
+	         первая дата
+			<input   type="datetime" placeholder="ДД" id="date_day" >
+			<input   type="datetime" placeholder="ММ" id="date_month" >
+			<input   type="datetime" placeholder="ГГГГ" id="date_year" >
+			вторая дата
+			<input   type="datetime" placeholder="ДД"id="date_day1" >
+			<input   type="datetime" placeholder="ММ" id="date_month1" >
+			<input   type="datetime" placeholder="ГГГГ" id="date_year1" >
+			<input   type="button" value="Рассчитать" onclick="input()">
+			<input   type="number" id="result"  >
 	<script src="script.js"></script>
 </body>
 </html>
