@@ -114,11 +114,13 @@ let open = document.getElementById('open-btn'),
 		employersValue.textContent = '';
 
 		for(let i = 0; i < hireEmployersItem.length; i++){
-			let employee = hireEmployersItem[i].value; 
+			let employee = hireEmployersItem[i].value;
+
+			if (/^[А-Я]{1}([а-я]{0,22})?$/.test(employee)){
 			mainList.employers[i] = employee;
 				employersValue.textContent += mainList.employers[i]	+ '; ';
 			}
-
+}
 			
 	});
 	function checkParams() {
