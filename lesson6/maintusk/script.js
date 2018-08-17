@@ -109,30 +109,33 @@ let open = document.getElementById('open-btn'),
 		countBudgetValue.value = yourBudget/30;
 	});
 
+		
+
 	employersBtn.addEventListener('click', () => {
 		mainList.employers = {};
 		employersValue.textContent = '';
 
-		for(let i = 0; i < hireEmployersItem.length; i++){
-			let employee = hireEmployersItem[i].value;
-
-			if (/^[А-Я]{1}([а-я]{0,22})?$/.test(employee)){
-			mainList.employers[i] = employee;
-				employersValue.textContent += mainList.employers[i]	+ '; ';
+ 		for(let i = 0; i < hireEmployersItem.length; i++){
+			let employee = hireEmployersItem[i].value; 
+			if (/^[А-Я]{1}([а-я]{0,22})?$/.test(employee)) {
+				
+			}else{
+				mainList.employers[i] = employee;
+				employersValue.textContent += mainList.employers[i]	+ ' ';
 			}
-}
-			
+ 			}
 	});
-	function checkParams() {
-		for(let i = 0; i < hireEmployersItem.length; i++){
-			let employee = hireEmployersItem[i].value;    
-    		if(employee.length != 0 ) {
-		          employersBtn.disabled = false;
-		    } else {
-		        employersBtn.setAttribute('disabled', 'disabled');
-		    }
-	}
-}
+
+	
+		for(let i = 0; i <  hireEmployersItem.length; i++){
+					hireEmployersItem[i].addEventListener('input', ()=> {
+						employersBtn.disabled = false;
+					    if  (hireEmployersItem[i].value == '') {
+					       employersBtn.disabled = true;	 
+				}
+					});
+		}
+
 	let mainList = {
 	budget:yourBudget,
 	name:shopName,
@@ -143,5 +146,3 @@ let open = document.getElementById('open-btn'),
 	shopItems: [],
 	}
 
-
-			//	console.log(mainList);	
