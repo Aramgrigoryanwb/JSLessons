@@ -1,0 +1,14 @@
+.obj_1{
+	background-color: blue;
+	width: 200px;
+	height: 200px;
+	margin-top: 15px;
+	position: relative;
+}
+.obj_2{
+	background-color: #FFA200;
+	width: 200px;
+	height: 200px;
+	margin-top: 15px;
+	position: relative;
+}
