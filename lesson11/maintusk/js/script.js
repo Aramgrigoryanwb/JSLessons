@@ -176,10 +176,20 @@ anchors.forEach(function(item) {
 
     //form
      //form
-   let message = new Object();
-    message.loading = 'background-image: url(img/ajax-loader.gif) ; background-repeat: no-repeat;display:inline; ';
-    message.failure = 'background-image: url(img/close-button.png ; background-repeat: no-repeat;display:inline; ';
-    message.success = 'background-image: url(img/checked.png) ; background-repeat: no-repeat;display:inline; ';
+   let imgLoader = document.createElement('img');
+    imgLoader.src = "img/ajax-loader.gif";
+    let imgSuccess = document.createElement('img');
+    imgSuccess.src = "img/checked.png";
+    let imgFail = document.createElement('img');
+    imgFail.src = "img/close-button.png";
+
+    let message = new Object();
+    message.loading = document.createElement('div');
+    	message.loading.appendChild(imgLoader);
+    message.failure = document.createElement('div');
+    	 message.failure.appendChild(imgFail);
+    message.success = document.createElement('div');
+   		 message.success.appendChild(imgSuccess);
 
 	console.log(message);
   
@@ -188,7 +198,7 @@ anchors.forEach(function(item) {
     	statusMessage = document.createElement('div');
     	
     	
-    	//statusMessage.classList.add('status');
+    	
 
   		
   	 console.log(message.success);
@@ -208,13 +218,14 @@ anchors.forEach(function(item) {
 
     		request.onreadystatechange = function(){
     			if (request.readyState < 4){
-    				statusMessage.innerHTML = message.loading;
+    				form.appendChild(message.loading);
     			}else if(request.readyState === 4){
     				if(request.status === 200 && request.status < 300){
-    					statusMessage.innerHTML = message.success;
+    					message.loading.style.display = "none";
+    					form.appendChild(message.success);
     					///
     				}else{
-    					statusMessage.innerHTML = message.failure;
+    					form.appendChild(message.failure);
     				}
     			}
     		}
@@ -226,8 +237,7 @@ anchors.forEach(function(item) {
 
     let formTel = document.getElementById('form'),
     	inputTel = formTel.getElementsByTagName('input');
-    	// statusMessage = document.createElement('div');
-    	// statusMessage.classList.add('status');
+    	
 
     	formTel.addEventListener('submit', function(event){
     		event.preventDefault();
@@ -244,13 +254,14 @@ anchors.forEach(function(item) {
 
     		request.onreadystatechange = function(){
     			if (request.readyState < 4){
-    				statusMessage.innerHTML = message.loading;
+    					formTel.appendChild(message.loading);
     			}else if(request.readyState === 4){
     				if(request.status === 200 && request.status < 300){
-    					statusMessage.innerHTML = message.success;
+    					message.loading.style.display = "none";
+    					formTel.appendChild(message.success); 
     					///
     				}else{
-    					statusMessage.innerHTML = message.failure;
+    					formTel.appendChild(message.failure);
     				}
     			}
     		}
@@ -259,7 +270,6 @@ anchors.forEach(function(item) {
     			// очищаем поля ввода
     		}
     	});
-
 
 
 
