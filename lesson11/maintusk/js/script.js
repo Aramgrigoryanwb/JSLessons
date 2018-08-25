@@ -177,14 +177,21 @@ anchors.forEach(function(item) {
     //form
      //form
    let message = new Object();
-  	message.loading = "" ;
-  	message.success = ""
-    message.failure = "Что-то пошло не так ...";
+    message.loading = 'background-image: url(img/ajax-loader.gif) ; background-repeat: no-repeat;display:inline; ';
+    message.failure = 'background-image: url(img/close-button.png ; background-repeat: no-repeat;display:inline; ';
+    message.success = 'background-image: url(img/checked.png) ; background-repeat: no-repeat;display:inline; ';
 
+	console.log(message);
+  
     let form = document.getElementsByClassName('main-form')[0],
     	input = form.getElementsByTagName('input'),
     	statusMessage = document.createElement('div');
-    	statusMessage.classList.add('status');
+    	
+    	
+    	//statusMessage.classList.add('status');
+
+  		
+  	 console.log(message.success);
 
     	form.addEventListener('submit', function(event){
     		event.preventDefault();
@@ -192,7 +199,7 @@ anchors.forEach(function(item) {
     		
     		//AJAX
     		let request =  new XMLHttpRequest();
-    		request.open("POST", '../server.php');
+    		request.open("POST", 'server.php');
     		request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 
     		let formData = new FormData(form);
@@ -252,6 +259,7 @@ anchors.forEach(function(item) {
     			// очищаем поля ввода
     		}
     	});
+
 
 
 
