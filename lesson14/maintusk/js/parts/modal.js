@@ -35,7 +35,6 @@
 								document.body.style.overflow = '';
 							});
 						                                                 }
-               //     }
-               // }
+             
       });
     module.exports = modal;

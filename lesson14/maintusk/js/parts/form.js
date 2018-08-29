@@ -1,11 +1,11 @@
  //form
      //form
    let imgLoader = document.createElement('img');
-    imgLoader.src = "img/ajax-loader.gif";
+    imgLoader.src = "../img/ajax-loader.gif";
     let imgSuccess = document.createElement('img');
-    imgSuccess.src = "img/checked.png";
+    imgSuccess.src = "../img/checked.png";
     let imgFail = document.createElement('img');
-    imgFail.src = "img/close-button.png";
+    imgFail.src = "../img/close-button.png";
 
     let message = new Object();
     message.loading = document.createElement('div');
