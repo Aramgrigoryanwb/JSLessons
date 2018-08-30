@@ -1,4 +1,5 @@
 // собираем все якоря; устанавливаем время анимации и количество кадров
+function scroll(){
 const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
       animationTime = 100,
       framesCount = 300;
@@ -31,4 +32,5 @@ anchors.forEach(function(item) {
     }, animationTime / framesCount);
   });
 });
+}
 module.exports = scroll;

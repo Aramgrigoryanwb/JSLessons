@@ -1,5 +1,5 @@
- //form
      //form
+     function form(){
    let imgLoader = document.createElement('img');
     imgLoader.src = "../img/ajax-loader.gif";
     let imgSuccess = document.createElement('img');
@@ -94,4 +94,5 @@
     			// очищаем поля ввода
     		}
     	});
+    }
         module.exports = form;

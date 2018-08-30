@@ -1,4 +1,6 @@
     //calc
+    function calc(){
+
 let persons = document.getElementsByClassName('counter-block-input')[0],
             restDays = document.getElementsByClassName('counter-block-input')[1],
             place = document.getElementById('select'),
@@ -44,5 +46,6 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
                     totalValue.innerHTML = a * this.options[this.selectedIndex].value;
                 }
             });
-         
+                 
+    }
             module.exports = calc;

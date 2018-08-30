@@ -1,5 +1,6 @@
 
 // timer
+ function timer(){
 	let deadline = '2018-08-31';
 	let now = Date.parse(new Date());
 	let dead = Date.parse(deadline);
@@ -60,5 +61,5 @@
 		}
 		setClock('timer', deadline);
 	}
-
+}
 module.exports = timer;

@@ -1,4 +1,5 @@
          //Slider
+         function slider(){
     let slideIndex = 1,
         slides = document.getElementsByClassName('slider-item'),
         prev = document.querySelector('.prev'),
@@ -50,4 +51,5 @@
                 }
             }
         });
+    }
 module.exports = slider;

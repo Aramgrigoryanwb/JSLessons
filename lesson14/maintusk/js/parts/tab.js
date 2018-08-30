@@ -1,3 +1,4 @@
+		function tab(){
 let tab = document.getElementsByClassName('info-header-tab'),
 		tabContent = document.getElementsByClassName('info-tabcontent'),
 		info =  document.getElementsByClassName('info-header')[0];
@@ -30,5 +31,5 @@ let tab = document.getElementsByClassName('info-header-tab'),
 					}
 				}
 		});
-
+}
 	module.exports = tab;	
