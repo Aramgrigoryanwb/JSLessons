@@ -7,7 +7,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
             totalValue = document.getElementById('total'),
             personSum = 0,
             daysSum = 0,
-            total = 0;
+            total = 0,
             reg = /[\D]/ig;
  
             totalValue.innerHTML = '';
