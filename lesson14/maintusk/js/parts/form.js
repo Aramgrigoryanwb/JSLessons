@@ -15,8 +15,6 @@
     message.success = document.createElement('div');
    		 message.success.appendChild(imgSuccess);
 
-	console.log(message);
-  
     let form = document.getElementsByClassName('main-form')[0],
     	input = form.getElementsByTagName('input'),
     	statusMessage = document.createElement('div');
@@ -25,7 +23,7 @@
     	
 
   		
-  	 console.log(message.success);
+ 
 
     	form.addEventListener('submit', function(event){
     		event.preventDefault();

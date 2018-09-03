@@ -51,6 +51,7 @@
             persons.addEventListener('keyup', function () {
                 personSum = +this.value;
                 total = daysSum * personSum * 4000;
+                place.selectedIndex = 0;
                 //if(persons.value == '' ||  persons.value == "+" ||  persons.value == "e" || Math.round(persons.value) != persons.value){
                 if (persons.value.match(reg)) {
                     persons.value = "";
@@ -63,17 +64,19 @@
             restDays.addEventListener('keyup', function () {
                 daysSum = +this.value;
                 total = daysSum * personSum * 4000;
+                place.selectedIndex = 0;
                 //if(restDays.value == ''  ||  restDays.value == "+" || restDays.value == "e" || Math.round(restDays.value) != restDays.value){
                 if (restDays.value.match(reg)) {
                     restDays.value = "";
                     totalValue.innerHTML = 0;
                 } else {
+
                     totalValue.innerHTML = total;
                 }
             });
 
             place.addEventListener('change', function () {
-                //if(restDays.value == ''  ||  restDays.value == "+" || restDays.value == "e" || Math.round(restDays.value) != restDays.value ||persons.value == '' ||  persons.value == "+" ||  persons.value == "e" || Math.round(persons.value) != persons.value ){
+                //if(persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0){
                 if (restDays.value.match(reg) || persons.value.match(reg)) {
                     totalValue.innerHTML = 0;
                 } else {
@@ -101,13 +104,13 @@
             message.success = document.createElement('div');
             message.success.appendChild(imgSuccess);
 
-            console.log(message);
+           
 
             var form = document.getElementsByClassName('main-form')[0],
                 input = form.getElementsByTagName('input'),
                 statusMessage = document.createElement('div');
 
-            console.log(message.success);
+            
 
             form.addEventListener('submit', function (event) {
                 event.preventDefault();

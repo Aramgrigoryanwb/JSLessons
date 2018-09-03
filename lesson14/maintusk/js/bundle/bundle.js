@@ -37,6 +37,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
             persons.addEventListener('keyup', function(){
                 personSum = +this.value;
                 total = (daysSum * personSum)*4000;
+                place.selectedIndex = 0;
                 //if(persons.value == '' ||  persons.value == "+" ||  persons.value == "e" || Math.round(persons.value) != persons.value){
                     if (persons.value.match(reg)){
                         persons.value = "";
@@ -50,6 +51,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
             restDays.addEventListener('keyup', function(){
                 daysSum = +this.value;
                 total = (daysSum * personSum)*4000;
+                place.selectedIndex = 0;
                 //if(restDays.value == ''  ||  restDays.value == "+" || restDays.value == "e" || Math.round(restDays.value) != restDays.value){
             if (restDays.value.match(reg)){
                         restDays.value = "";
@@ -89,7 +91,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
     message.success = document.createElement('div');
    		 message.success.appendChild(imgSuccess);
 
-	console.log(message);
+	
   
     let form = document.getElementsByClassName('main-form')[0],
     	input = form.getElementsByTagName('input'),
@@ -98,8 +100,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
     	
     	
 
-  		
-  	 console.log(message.success);
+ 
 
     	form.addEventListener('submit', function(event){
     		event.preventDefault();

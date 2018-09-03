@@ -15,6 +15,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
             persons.addEventListener('keyup', function(){
                 personSum = +this.value;
                 total = (daysSum * personSum)*4000;
+                place.selectedIndex = 0;
                 //if(persons.value == '' ||  persons.value == "+" ||  persons.value == "e" || Math.round(persons.value) != persons.value){
                     if (persons.value.match(reg)){
                         persons.value = "";
@@ -28,6 +29,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
             restDays.addEventListener('keyup', function(){
                 daysSum = +this.value;
                 total = (daysSum * personSum)*4000;
+                place.selectedIndex = 0;
                 //if(restDays.value == ''  ||  restDays.value == "+" || restDays.value == "e" || Math.round(restDays.value) != restDays.value){
             if (restDays.value.match(reg)){
                         restDays.value = "";
@@ -38,7 +40,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
             });
 
             place.addEventListener('change', function(){
-                //if(restDays.value == ''  ||  restDays.value == "+" || restDays.value == "e" || Math.round(restDays.value) != restDays.value ||persons.value == '' ||  persons.value == "+" ||  persons.value == "e" || Math.round(persons.value) != persons.value ){
+                //if(persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0){
                 if (restDays.value.match(reg) || persons.value.match(reg)){
                     totalValue.innerHTML = 0;
                 }else{
