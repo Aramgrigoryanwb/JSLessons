@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="style.css">
+    	<style>
+    		.tabs__content {
+  display: none; /* по умолчанию прячем все блоки */
+}
+.tabs__content.active {
+  display: block; /* по умолчанию показываем нужный блок */
+}
+    	</style>
+    </head>
+    <body>
+    	<div class="tabs">
+
+  <ul class="tabs__caption">
+    <li class="active">Слайдер</li>
+    <li>Калькулятор</li>
+    <li>чек бокс</li>
+  </ul>
+
+  <div class="tabs__content active">
+ <div class="galleria">
+            <img src="photo_1.jpg">
+            <img src="photo_2.jpg">
+            <img src="photo_3.jpg">
+        </div>
+  </div>
+
+  <div class="tabs__content">
+     <div class="container">  
+            <div class="view">0</div>
+        </div>
+</div>
+    <div class="tabs__content">
+    	<div class="lol">
+	<button type="button" class="icon">
+	<div class="cloud">
+		<div class="puff puff-1"></div>
+		<div class="puff puff-2"></div>
+		<div class="puff puff-3"></div>
+		<div class="puff puff-4"></div>
+		<div class="puff puff-5"></div>
+		<div class="puff puff-6"></div>
+		<div class="puff puff-7"></div>
+		<div class="puff puff-8"></div>
+		<div class="puff puff-9"></div>
+		<div class="puff puff-10"></div>
+		<div class="cloud-core"></div>
+		<div class="check"></div>
+		<div class="arrow">
+			<div class="arrow-stem">
+				<div class="arrow-l-tip"></div>
+				<div class="arrow-r-tip"></div>
+			</div>
+		</div>
+	</div>
+	<div class="preload">
+		<div class="drop drop-1"></div>
+		<div class="drop drop-2"></div>
+		<div class="drop drop-3"></div>
+	</div>
+	<div class="progress"></div>
+</button>
+  </div>
+</div>
+</div><!-- .tabs-->
+       
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="galleria/galleria-1.5.7.min.js"></script>
+        <script>
+	(function() { 
+            Galleria.loadTheme('galleria/themes/classic/galleria.classic.min.js');
+			Galleria.configure({
+			    transition: 'slide',
+			    imageCrop: true,
+			    autoplay: 3000,
+			    height: 700,
+			    width: 1400,
+			    lightbox: true
+			});
+            Galleria.run('.galleria');
+        }());
+        </script>
+        <script>
+        (function($) {
+$(function() {
+
+  $('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('active').siblings().removeClass('active')
+      .closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+  });
+
+});
+})(jQuery);
+</script>
+	<script src="scr.js"></script>
+    </body>
+</html>
