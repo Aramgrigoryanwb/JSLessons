@@ -2,22 +2,28 @@
 // подарок
 let gift = document.querySelector('.fixed-gift');
 let modal = document.querySelector('.popup-gift');
-let close = document.querySelector('.popup-close');
+let close = document.getElementsByClassName('popup-close')[1];
 	
+//console.log(dialog);
+
 	 gift.addEventListener('click',function(){
       modal.style.display = "block";
        gift.style.display = "none";
+       document.body.style.overflow = 'hidden';
     });
+	 modal.addEventListener('click', function(){
+	  let target = event.target;
+	  if (target.className != "popup-content"){
+	  		 modal.style.display = "none";
+		  document.body.style.overflow = ''; 
+	  }
+	 });
 
-	modal.addEventListener('click', function(){
-		 modal.style.display = "none";
-       	 gift.style.display = "inline";
-	});
 
 	close.addEventListener('click', function(){
 		 modal.style.display = "none";
-       	 gift.style.display = "inline";
-	});
+		  document.body.style.overflow = '';  
+       	});
 
 	// слайдер нижний
 
@@ -60,29 +66,29 @@ let close = document.querySelector('.popup-close');
   //       });
 
 // Модальные окна popup-consultation
-	let buttonConsultation1= document.getElementsByClassName('button button-order button-consultation')[0];
-	let buttonConsultation2= document.getElementsByClassName('button button-order button-consultation')[1];
-	let buttonConsultation3= document.getElementsByClassName('button button-order button-consultation')[2];
-	let modalConsultation = document.querySelector('.popup-consultation');
+	// let buttonConsultation1= document.getElementsByClassName('button button-order button-consultation')[0];
+	// let buttonConsultation2= document.getElementsByClassName('button button-order button-consultation')[1];
+	// let buttonConsultation3= document.getElementsByClassName('button button-order button-consultation')[2];
+	// let modalConsultation = document.querySelector('.popup-consultation');
 
-		 buttonConsultation1.addEventListener('click',function(){
-	      modalConsultation.style.display = "block";
+	// 	 buttonConsultation1.addEventListener('click',function(){
+	//       modalConsultation.style.display = "block";
 	
-	    });
-		 	 buttonConsultation2.addEventListener('click',function(){
-	      modalConsultation.style.display = "block";
+	//     });
+	// 	 	 buttonConsultation2.addEventListener('click',function(){
+	//       modalConsultation.style.display = "block";
 	
-	    });
-		 	 	 buttonConsultation3.addEventListener('click',function(){
-	      modalConsultation.style.display = "block";
+	//     });
+	// 	 	 	 buttonConsultation3.addEventListener('click',function(){
+	//       modalConsultation.style.display = "block";
 	
-	    });
-			modalConsultation.addEventListener('click', function(){
-				   modalConsultation.style.display = "none";
+	//     });
+	// 		modalConsultation.addEventListener('click', function(){
+	// 			   modalConsultation.style.display = "none";
 		       	 
-			});
+	// 		});
 
-			close.addEventListener('click', function(){
-				   modalConsultation.style.display = "none";
+	// 		close.addEventListener('click', function(){
+	// 			   modalConsultation.style.display = "none";
 		       	 
-			});
+	// 		});
