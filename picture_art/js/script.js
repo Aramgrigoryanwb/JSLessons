@@ -110,4 +110,18 @@ let close = document.getElementsByClassName('popup-close')[1];
 		       	 
 			});
 
-//Модальное окно при пролистывании			
+//Подгрузка блоков		
+let buttonTransparent = document.getElementsByClassName('button button-transparent button-styles')[0];
+let cards = document.getElementsByClassName('hidden-lg hidden-md hidden-sm hidden-xs styles-2');
+let hide  = document.getElementsByClassName ('hidden-lg');
+
+	
+buttonTransparent.addEventListener('click', function(e){
+	e.preventDefault();
+	for(let i = 0; i < cards.length; i++){
+	cards[i].style.cssText = 'display: block !important;';
+		
+	
+	}
+	buttonTransparent.style.display = "none";
+});
