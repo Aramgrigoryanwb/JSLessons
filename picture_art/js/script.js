@@ -11,84 +11,103 @@ let close = document.getElementsByClassName('popup-close')[1];
        gift.style.display = "none";
        document.body.style.overflow = 'hidden';
     });
-	 modal.addEventListener('click', function(){
+
+	window.addEventListener('click', function(){
 	  let target = event.target;
-	  if (target.className != "popup-content"){
-	  		 modal.style.display = "none";
+	  if (target == modal){
+	  		modal.style.display = "none";
 		  document.body.style.overflow = ''; 
 	  }
 	 });
-
-
-	close.addEventListener('click', function(){
+		close.addEventListener('click', function(){
 		 modal.style.display = "none";
 		  document.body.style.overflow = '';  
        	});
 
-	// слайдер нижний
 
-	 // let slideIndex = 1,
-  //      	 slides = document.getElementsByClassName('feedback-slider-item'),
-	 //     prev = document.querySelector('.main-prev-btn'),
-	 //     next = document.querySelector('.main-next-btn');
-
-		// showSlides(slideIndex);
-		// console.log(slides)
-
-  //      function showSlides(n) {
-  //           if(n > slides.length){
-  //               slideIndex = 1;
-  //           };
-  //           if (n < 1){
-  //               slideIndex = slides.length;
-  //           }
-  //             for(let i = 0; i < slides.length; i++){
-  //          		 slides[i].style.display = 'none';
-  //               console.log('hello');
-  //           }
-  //         }
- 
-
-  //       function plusSlides(n){
-  //           showSlides(slideIndex += n)
-  //       }
-
-  //       function currentSlide(n){
-  //           showSlides(slideIndex = n)
-  //       }
-
-  //       prev.addEventListener('click', function(){
-  //           plusSlides(-1);
-  //       });
-
-  //       next.addEventListener('click', function(){
-  //           plusSlides(1);
-  //       });
-
-// Модальные окна popup-consultation
-	// let buttonConsultation1= document.getElementsByClassName('button button-order button-consultation')[0];
-	// let buttonConsultation2= document.getElementsByClassName('button button-order button-consultation')[1];
-	// let buttonConsultation3= document.getElementsByClassName('button button-order button-consultation')[2];
-	// let modalConsultation = document.querySelector('.popup-consultation');
-
-	// 	 buttonConsultation1.addEventListener('click',function(){
-	//       modalConsultation.style.display = "block";
+	 //Модальные окна  popup-consultation
+	let buttonConsultation1= document.getElementsByClassName('button button-order button-consultation')[0];
+	let buttonConsultation2= document.getElementsByClassName('button button-order button-consultation')[1];
+	let buttonConsultation3= document.getElementsByClassName('button button-order button-consultation')[2];
+	let modalConsultation = document.querySelector('.popup-consultation');
+	let close0 = document.getElementsByClassName('popup-close')[0];
+		 buttonConsultation1.addEventListener('click',function(){
+	      modalConsultation.style.display = "block";
 	
-	//     });
-	// 	 	 buttonConsultation2.addEventListener('click',function(){
-	//       modalConsultation.style.display = "block";
+	    });
+		 	 buttonConsultation2.addEventListener('click',function(){
+	      modalConsultation.style.display = "block";
 	
-	//     });
-	// 	 	 	 buttonConsultation3.addEventListener('click',function(){
-	//       modalConsultation.style.display = "block";
+	    });
+		 	 	 buttonConsultation3.addEventListener('click',function(){
+	      modalConsultation.style.display = "block";
 	
-	//     });
-	// 		modalConsultation.addEventListener('click', function(){
-	// 			   modalConsultation.style.display = "none";
+	    });
+
+		window.addEventListener('click', function(){
+			  let target = event.target;
+			  if (target == modalConsultation){
+			  		modalConsultation.style.display = "none";
+				  document.body.style.overflow = ''; 
+			  }
+			});
+
+			close0.addEventListener('click', function(){
+				   modalConsultation.style.display = "none";
 		       	 
-	// 		});
+			});
 
-	// 		close.addEventListener('click', function(){
-	// 			   modalConsultation.style.display = "none";
+//Модальные окна popup-design
+	let buttonOrder = document.getElementsByClassName('button button-order button-design')[0];
+	let buttonOrder1 = document.getElementsByClassName('button button-order button-design')[1];
+	let buttonOrder2 = document.getElementsByClassName('button button-order button-design')[2];	
+	let buttonOrder3 = document.getElementsByClassName('button button-order button-design')[3];
+	let buttonOrder4 = document.getElementsByClassName('button button-order button-design')[4];
+	let buttonOrder5 = document.getElementsByClassName('button button-order button-design')[5];
+	let buttonOrder6 = document.getElementsByClassName('button button-order button-design')[6];
+	let modalPopupDesign = document.getElementsByClassName('popup-design')[0];
+	let close1 = document.getElementsByClassName('popup-close')[2];
+
+
+	 	 buttonOrder.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+
+	 	 	 buttonOrder1.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+	 	 	buttonOrder2.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+	 	 	buttonOrder3.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+	 	 	 buttonOrder4.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+			buttonOrder5.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+	 	 buttonOrder6.addEventListener('click', function(){
+	      modalPopupDesign.style.display  = "block";
+	
+	    });
+	 	 window.addEventListener('click', function(){
+			  let target = event.target;
+			  if (target == modalPopupDesign){
+			  		modalPopupDesign.style.display = "none";
+				  document.body.style.overflow = ''; 
+			  }
+			});
+			close1.addEventListener('click', function(){
+				modalPopupDesign.style.display = "none";
 		       	 
-	// 		});
+			});
+
+//Модальное окно при пролистывании			
