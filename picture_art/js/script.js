@@ -149,7 +149,7 @@ buttonTransparent.addEventListener('click', function(e){
            
             }
             slides[slideIndex - 1].style.display = 'block';
-          	slidesMain[slideIndexMain - 1].classList.add("wow","bounceOutRigth");
+          	slides[slideIndex - 1].classList.add("wow","bounceOutRigth");
           }
          
           function plusSlides(n){
