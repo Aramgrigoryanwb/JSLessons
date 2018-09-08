@@ -108,7 +108,7 @@ let close = document.getElementsByClassName('popup-close')[1];
 			});
 			close1.addEventListener('click', function(){
 				modalPopupDesign.style.display = "none";
-		       	 
+		       	  document.body.style.overflow = '';
 			});
 
 //Подгрузка блоков		
