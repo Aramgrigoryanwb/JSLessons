@@ -33,15 +33,15 @@ let close = document.getElementsByClassName('popup-close')[1];
 	let close0 = document.getElementsByClassName('popup-close')[0];
 		 buttonConsultation1.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
-	
+					document.body.style.overflow = 'hidden';
 	    });
 		 	 buttonConsultation2.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
-	
+					document.body.style.overflow = 'hidden';
 	    });
 		 	 	 buttonConsultation3.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
-	
+			 document.body.style.overflow = 'hidden';
 	    });
 
 		window.addEventListener('click', function(){
@@ -54,7 +54,7 @@ let close = document.getElementsByClassName('popup-close')[1];
 
 			close0.addEventListener('click', function(){
 				   modalConsultation.style.display = "none";
-		       	 
+		       	   document.body.style.overflow = '';
 			});
 
 //Модальные окна popup-design
@@ -71,32 +71,33 @@ let close = document.getElementsByClassName('popup-close')[1];
 
 	 	 buttonOrder.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
-	
+			 document.body.style.overflow = 'hidden';
 	    });
 
 	 	 	 buttonOrder1.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
-	
+			 document.body.style.overflow = 'hidden';
 	    });
 	 	 	buttonOrder2.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-	
+	      	modalPopupDesign.style.display  = "block";
+			 document.body.style.overflow = 'hidden';
 	    });
 	 	 	buttonOrder3.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-	
+	      	modalPopupDesign.style.display  = "block";
+			modalPopupDesign.style.zIndex = "10000000"; 
 	    });
+	   
 	 	 	 buttonOrder4.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
-	
+				modalPopupDesign.style.zIndex = "10000000"; 
 	    });
 			buttonOrder5.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-	
+	      	modalPopupDesign.style.display  = "block";
+			modalPopupDesign.style.zIndex = "10000000";
 	    });
 	 	 buttonOrder6.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
-	
+			document.body.style.overflow = 'hidden';
 	    });
 	 	 window.addEventListener('click', function(){
 			  let target = event.target;
