@@ -117,14 +117,13 @@ let close = document.getElementsByClassName('popup-close')[1];
 //Подгрузка блоков		
 let buttonTransparent = document.getElementsByClassName('button button-transparent button-styles')[0];
 let cards = document.getElementsByClassName('hidden-lg hidden-md hidden-sm hidden-xs styles-2');
-let hide  = document.getElementsByClassName ('hidden-lg');
 
 	
 buttonTransparent.addEventListener('click', function(e){
 	e.preventDefault();
 	for(let i = 0; i < cards.length; i++){
 	cards[i].style.cssText = 'display: block !important;';
-		
+	cards[i].classList.add("col-sm-3", "col-sm-offset-0", "col-xs-10", "col-xs-offset-1");	
 	
 	}
 	buttonTransparent.style.display = "none";
@@ -150,7 +149,7 @@ buttonTransparent.addEventListener('click', function(e){
            
             }
             slides[slideIndex - 1].style.display = 'block';
-          
+          	slidesMain[slideIndexMain - 1].classList.add("wow","bounceOutRigth");
           }
          
           function plusSlides(n){
@@ -194,7 +193,7 @@ buttonTransparent.addEventListener('click', function(e){
            		
             }
             slidesMain[slideIndexMain - 1].style.display = 'block';
-         	slidesMain[slideIndexMain - 1].classList.add("wow","bounceInLeft");
+         	slidesMain[slideIndexMain - 1].classList.add("wow","bounceInDown");
           }
          
           setInterval (function(){
