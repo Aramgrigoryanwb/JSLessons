@@ -85,15 +85,18 @@ let close = document.getElementsByClassName('popup-close')[1];
 	 	 	buttonOrder3.addEventListener('click', function(){
 	      	modalPopupDesign.style.display  = "block";
 			modalPopupDesign.style.zIndex = "10000000"; 
+			document.body.style.overflow = 'hidden';
 	    });
 	   
 	 	 	 buttonOrder4.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
 				modalPopupDesign.style.zIndex = "10000000"; 
+				document.body.style.overflow = 'hidden';
 	    });
 			buttonOrder5.addEventListener('click', function(){
 	      	modalPopupDesign.style.display  = "block";
 			modalPopupDesign.style.zIndex = "10000000";
+			document.body.style.overflow = 'hidden';
 	    });
 	 	 buttonOrder6.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
@@ -126,3 +129,74 @@ buttonTransparent.addEventListener('click', function(e){
 	}
 	buttonTransparent.style.display = "none";
 });
+// нижний слайдер
+
+ 	 let slideIndex = 1,
+       	 slides = document.getElementsByClassName('feedback-slider-item'),
+	     prev = document.querySelector('.main-prev-btn'),
+	     next = document.querySelector('.main-next-btn');
+
+	    showSlides(slideIndex);
+  
+        function showSlides(n) {
+            if(n > slides.length){
+                slideIndex = 1;
+            };
+            if (n < 1){
+                slideIndex = slides.length;
+            }
+              for(let i = 0; i < slides.length; i++){
+           		 slides[i].style.display = 'none';
+           
+            }
+            slides[slideIndex - 1].style.display = 'block';
+          
+          }
+         
+          function plusSlides(n){
+            showSlides(slideIndex += n)
+        }
+
+        function currentSlide(n){
+            showSlides(slideIndex = n)
+        }
+
+        prev.addEventListener('click', function(){
+            plusSlides(-1);
+        });
+
+        next.addEventListener('click', function(){
+            plusSlides(1);
+        });
+
+           setInterval (function(){
+            showSlides(slideIndex += 1)
+        },4000);
+
+        
+
+
+  //верхний слайдер
+  	let slideIndexMain = 1,
+       	 slidesMain = document.getElementsByClassName('main-slider-item');
+	
+	    showSlidesMain(slideIndexMain);
+  
+        function showSlidesMain(n) {
+            if(n > slidesMain.length){
+                slideIndexMain = 1;
+            };
+            if (n < 1){
+                slideIndexMain = slidesMain.length;
+            }
+              for(let i = 0; i < slidesMain.length; i++){
+           		slidesMain[i].style.display = 'none';
+           		
+            }
+            slidesMain[slideIndexMain - 1].style.display = 'block';
+         	slidesMain[slideIndexMain - 1].classList.add("wow","bounceInLeft");
+          }
+         
+          setInterval (function(){
+            showSlidesMain(slideIndexMain += 1)
+        },3000);
