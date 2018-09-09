@@ -1,5 +1,6 @@
 
 // подарок
+var b = 0;
 let gift = document.querySelector('.fixed-gift');
 let modal = document.querySelector('.popup-gift');
 let close = document.getElementsByClassName('popup-close')[1];
@@ -10,6 +11,7 @@ let close = document.getElementsByClassName('popup-close')[1];
       modal.style.display = "block";
        gift.style.display = "none";
        document.body.style.overflow = 'hidden';
+       b+=1;
     });
 
 	window.addEventListener('click', function(){
@@ -34,14 +36,17 @@ let close = document.getElementsByClassName('popup-close')[1];
 		 buttonConsultation1.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
 					document.body.style.overflow = 'hidden';
+				b+=1;
 	    });
 		 	 buttonConsultation2.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
 					document.body.style.overflow = 'hidden';
+				b+=1;
 	    });
 		 	 	 buttonConsultation3.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
 			 document.body.style.overflow = 'hidden';
+			 b+=1;
 	    });
 
 		window.addEventListener('click', function(){
@@ -72,35 +77,42 @@ let close = document.getElementsByClassName('popup-close')[1];
 	 	 buttonOrder.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
 			 document.body.style.overflow = 'hidden';
+			 b++;
 	    });
 
 	 	 	 buttonOrder1.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
 			 document.body.style.overflow = 'hidden';
+ 			b++;
 	    });
 	 	 	buttonOrder2.addEventListener('click', function(){
 	      	modalPopupDesign.style.display  = "block";
 			 document.body.style.overflow = 'hidden';
+			 b++;	 
 	    });
 	 	 	buttonOrder3.addEventListener('click', function(){
 	      	modalPopupDesign.style.display  = "block";
 			modalPopupDesign.style.zIndex = "10000000"; 
 			document.body.style.overflow = 'hidden';
-	    });
+			 b++;
+	  	 });
 	   
 	 	 	 buttonOrder4.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
 				modalPopupDesign.style.zIndex = "10000000"; 
 				document.body.style.overflow = 'hidden';
+				 b++;
 	    });
 			buttonOrder5.addEventListener('click', function(){
 	      	modalPopupDesign.style.display  = "block";
 			modalPopupDesign.style.zIndex = "10000000";
 			document.body.style.overflow = 'hidden';
+			 b++;
 	    });
 	 	 buttonOrder6.addEventListener('click', function(){
 	      modalPopupDesign.style.display  = "block";
-			document.body.style.overflow = 'hidden';
+			document.body.style.overflow = 'hidden'; 
+			 b++;
 	    });
 	 	 window.addEventListener('click', function(){
 			  let target = event.target;
@@ -296,11 +308,11 @@ buttonTransparent.addEventListener('click', function(){
 	
 
 
-
+console.log(b);
 
  	window.addEventListener('scroll', function() {
 	  let scrolled = document.documentElement.scrollTop;
-	  if (scrolled > 12375){
+	  if (scrolled > 12375 && b == 0){
 	  	gift.style.display = "none";
 	  	modal.style.display = "block";
 	  	document.body.style.overflow = 'hidden';
@@ -311,3 +323,7 @@ buttonTransparent.addEventListener('click', function(){
 	  	}
 	  }
 	});
+
+
+//аккардион
+
