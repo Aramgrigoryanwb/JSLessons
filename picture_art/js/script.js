@@ -306,13 +306,18 @@ buttonTransparent.addEventListener('click', function(){
 
 	let a = 0;
 	
-
-
-console.log(b);
+	 
 
  	window.addEventListener('scroll', function() {
-	  let scrolled = document.documentElement.scrollTop;
-	  if (scrolled > 12375 && b == 0){
+ 	  let clientHeight = document.getElementsByClassName('promo promo-3')[0].clientHeight;
+	  let scrolled =Math.round(document.documentElement.scrollTop);
+	  let scrollHeight = document.documentElement.scrollHeight;
+	  let zyrna = scrollHeight - scrolled;
+	  console.log(scrolled);
+	  console.log(scrollHeight);
+	  console.log(clientHeight);
+	  console.log(zyrna);
+	  if (scrollHeight - scrolled <= clientHeight && b == 0){
 	  	gift.style.display = "none";
 	  	modal.style.display = "block";
 	  	document.body.style.overflow = 'hidden';
@@ -321,9 +326,37 @@ console.log(b);
 	  		modal.style.display = "none";	
 	  		document.body.style.overflow = '';
 	  	}
-	  }
-	});
+	   }
+	
+	 });
 
 
 //аккардион
 
+let acc = document.getElementsByClassName('accordion-heading');
+let accBlock = document.getElementsByClassName("accordion-block");
+
+for(let i = 0; i<acc.length;i++){
+	accBlock[i].style.display = "none";
+}
+for(let i = 0; i<acc.length;i++){
+
+		if(accBlock[i].style.display == "none"){
+			acc[i].addEventListener('click',function(){
+				accBlock[i].style.display = "block";
+				acc[i].style.color = "#c51abb"; 
+			
+				});
+
+		}
+}
+
+for(let i = 0; i<accBlock.length;i++){
+		if(accBlock[i].style.display == "block"){
+				console.log('click');
+			 	acc[i].addEventListener('click',function(){
+			 	accBlock[i].style.display = "none";	
+			 	acc[i].style.color = "#333333";
+		 	});
+	}
+}	
