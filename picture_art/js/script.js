@@ -340,13 +340,21 @@ let lovers = document.getElementsByClassName("lovers")[0];
 let chef = document.getElementsByClassName("chef")[0];
 let girl = document.getElementsByClassName("girl")[0];
 let guy = document.getElementsByClassName("guy")[0];
-let grandmother = document.getElementsByClassName("portfolio-no")[0];
-let granddad = document.getElementsByClassName("portfolio-no")[0];
-let portfolioMenu =  document.getElementsByClassName("portfolio-menu");
-let portfolioBlockAll =document.getElementsByClassName("portfolio-block all"); 
-  console.log(portfolioBlockAll);
+let grandmother = document.getElementsByClassName("grandmother")[0];
+let granddad = document.getElementsByClassName("granddad")[0];
+
+let portfolioNo = document.getElementsByClassName("portfolio-no")[0];
+
+let portfolioMenu =  document.getElementsByClassName("portfolio-menu")[0];
+let portfolioBlockAll =document.getElementsByClassName("portfolio-block"); 
+  
+  console.log(portfolioMenu.children[6]);
+  console.log(portfolioMenu.children.length);
+
+
 
 allActive.addEventListener('click',function(){
+	allActive.classList.add("active"); 
 	for (let i = 0; i<portfolioBlockAll.length;i++){
 			if(portfolioBlockAll[i].classList.contains('all')){
 				portfolioBlockAll[i].style.display = "block";
@@ -354,13 +362,18 @@ allActive.addEventListener('click',function(){
 			}
 	}
 
-		// for(let i = 0; i<portfolioMenu.length;i++){
-		// 		if (portfolioMenu[i].classList.contains("active")){
-		// 			(portfolioMenu[i].classList.remove("active"))
-		// 		allActive.classList.add("active"); 
-		
-		// 		}
-		// }
+
+
+	for(let i = 0; i<portfolioMenu.children.length;i++){
+		if (portfolioMenu.children[i].classList.contains("active")){
+			portfolioMenu.children[i].classList.remove("active");
+				
+		}else{
+			allActive.classList.add("active");
+		}		
+		}
+				
+	
 });
 
 lovers.addEventListener('click',function(){
@@ -372,6 +385,18 @@ lovers.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "block";
 			}
 	}
+
+
+	
+		for(let i = 0; i<portfolioMenu.children.length;i++){
+			if (portfolioMenu.children[i].classList.contains("active")){
+				portfolioMenu.children[i].classList.remove("active");
+									
+			}else{
+				lovers.classList.add("active");
+			}
+		}			
+	
 });
 
 chef.addEventListener('click',function(){
@@ -381,8 +406,16 @@ chef.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "none";
 			}else{
 				portfolioBlockAll[i].style.display = "block";
-			}
+			}			
 	}
+		for(let i = 0; i<portfolioMenu.children.length;i++){
+			if (portfolioMenu.children[i].classList.contains("active")){
+				portfolioMenu.children[i].classList.remove("active");
+										
+			}else{
+				chef.classList.add("active");
+			}
+		}
 });
 
 girl.addEventListener('click',function(){
@@ -394,6 +427,14 @@ girl.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "block";
 			}
 	}
+	for(let i = 0; i<portfolioMenu.children.length;i++){
+			if (portfolioMenu.children[i].classList.contains("active")){
+				portfolioMenu.children[i].classList.remove("active");
+										
+			}else{
+				girl.classList.add("active");
+			}
+		}
 });
 
 guy.addEventListener('click',function(){
@@ -405,27 +446,50 @@ guy.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "block";
 			}
 	}
+		for(let i = 0; i<portfolioMenu.children.length;i++){
+			if (portfolioMenu.children[i].classList.contains("active")){
+				portfolioMenu.children[i].classList.remove("active");
+								
+			}else{
+				guy.classList.add("active");
+			}
+		}
 });
 
-// grandmother.addEventListener('click',function(){
+grandmother.addEventListener('click',function(){
+	for (let i = 0; i<portfolioBlockAll.length;i++){
 
-// 			if(portfolioBlockAll[i].classList.contains('grandmother')){
-// 				portfolioBlockAll[i].style.display = "none";
-// 				allActive.classList.remove("active");
-// 				grandmother.classList.add("active"); 
-// 			}
+			portfolioBlockAll[i].style.display = "none";
+			portfolioNo.style.display = "block";
+			
+	}
+	for(let i = 0; i<portfolioMenu.children.length;i++){
+			if (portfolioMenu.children[i].classList.contains("active")){
+				portfolioMenu.children[i].classList.remove("active");
+										
+			}else{
+				grandmother.classList.add("active");
+			}
+		}
+});
 
-// });
-
-// granddad.addEventListener('click',function(){
-
-// 			if(portfolioBlockAll[i].classList.contains('granddad')){
-				
-
-// 				allActive.classList.remove("active");
-// 				granddad.classList.add("active");
-// 				granddad.classList.add("portfolio-no");
-// 			}
+granddad.addEventListener('click',function(){
 	
-// });
+	for (let i = 0; i<portfolioBlockAll.length;i++){
 
+			portfolioBlockAll[i].style.display = "none";
+			portfolioNo.style.display = "block";
+			
+	}
+	for(let i = 0; i<portfolioMenu.children.length;i++){
+			if (portfolioMenu.children[i].classList.contains("active")){
+				portfolioMenu.children[i].classList.remove("active");
+										
+			}else{
+				granddad.classList.add("active");
+			 }
+		}
+
+});
+
+    
