@@ -28,26 +28,18 @@ let close = document.getElementsByClassName('popup-close')[1];
 
 
 	 //Модальные окна  popup-consultation
-	let buttonConsultation1= document.getElementsByClassName('button button-order button-consultation')[0];
-	let buttonConsultation2= document.getElementsByClassName('button button-order button-consultation')[1];
-	let buttonConsultation3= document.getElementsByClassName('button button-order button-consultation')[2];
+	let buttonConsultation= document.getElementsByClassName('button-consultation');
 	let modalConsultation = document.querySelector('.popup-consultation');
 	let close0 = document.getElementsByClassName('popup-close')[0];
-		 buttonConsultation1.addEventListener('click',function(){
+	for(let i =0; i<buttonConsultation.length;i++){
+
+		 buttonConsultation.addEventListener('click',function(){
 	      modalConsultation.style.display = "block";
 					document.body.style.overflow = 'hidden';
 				b+=1;
 	    });
-		 	 buttonConsultation2.addEventListener('click',function(){
-	      modalConsultation.style.display = "block";
-					document.body.style.overflow = 'hidden';
-				b+=1;
-	    });
-		 	 	 buttonConsultation3.addEventListener('click',function(){
-	      modalConsultation.style.display = "block";
-			 document.body.style.overflow = 'hidden';
-			 b+=1;
-	    });
+	}
+		
 
 		window.addEventListener('click', function(){
 			  let target = event.target;
@@ -63,7 +55,7 @@ let close = document.getElementsByClassName('popup-close')[1];
 			});
 
 //Модальные окна popup-design
-	let buttonOrder = document.getElementsByClassName('button button-order button-design');
+	let buttonOrder = document.getElementsByClassName('button-design');
 	let modalPopupDesign = document.getElementsByClassName('popup-design')[0];
 	let close1 = document.getElementsByClassName('popup-close')[2];
 
@@ -330,8 +322,7 @@ function initStopwatch() {
 function getSecs() {
   var tSecs = Math.round(initStopwatch());
   let x = setTimeout('getSecs()', 1000); 
-  console.log(x);
-  if (x>10 && x<=11){
+  if (x>60 && x<=61){
   	if(modalConsultation.style.display == "block" || modal.style.display == "block" || modalPopupDesign.style.display == "block"){
   	  modalConsultation.style.display = "none";
 	}else{
@@ -341,4 +332,116 @@ function getSecs() {
   }
  }
  getSecs();
+
+
+/// фильтрация блоков
+let allActive = document.getElementsByClassName("all active")[0];
+let lovers = document.getElementsByClassName("lovers")[0];
+let chef = document.getElementsByClassName("chef")[0];
+let girl = document.getElementsByClassName("girl")[0];
+let guy = document.getElementsByClassName("guy")[0];
+let grandmother = document.getElementsByClassName("portfolio-no")[0];
+let granddad = document.getElementsByClassName("portfolio-no")[0];
+let portfolioMenu =  document.getElementsByClassName("portfolio-menu");
+let portfolioBlockAll =document.getElementsByClassName("portfolio-block all"); 
+  console.log(portfolioBlockAll);
+
+allActive.addEventListener('click',function(){
+	for (let i = 0; i<portfolioBlockAll.length;i++){
+			if(portfolioBlockAll[i].classList.contains('all')){
+				portfolioBlockAll[i].style.display = "block";
+
+			}
+	}
+
+		// for(let i = 0; i<portfolioMenu.length;i++){
+		// 		if (portfolioMenu[i].classList.contains("active")){
+		// 			(portfolioMenu[i].classList.remove("active"))
+		// 		allActive.classList.add("active"); 
+		
+		// 		}
+		// }
+});
+
+lovers.addEventListener('click',function(){
+	for (let i = 0; i<portfolioBlockAll.length;i++){
+
+			if(!portfolioBlockAll[i].classList.contains('lovers')){
+				portfolioBlockAll[i].style.display = "none";
+
+
+
+
+
+				// allActive.classList.remove("active");
+				// lovers.classList.add("active"); 
+			}else{
+				portfolioBlockAll[i].style.display = "block";
+			}
+	}
+});
+
+chef.addEventListener('click',function(){
+	for (let i = 0; i<portfolioBlockAll.length;i++){
+
+			if(!portfolioBlockAll[i].classList.contains('chef')){
+				portfolioBlockAll[i].style.display = "none";
+
+				// allActive.classList.remove("active");
+				// chef.classList.add("active"); 
+			}else{
+				portfolioBlockAll[i].style.display = "block";
+			}
+	}
+});
+
+girl.addEventListener('click',function(){
+	for (let i = 0; i<portfolioBlockAll.length;i++){
+
+			if(!portfolioBlockAll[i].classList.contains('girl')){
+				portfolioBlockAll[i].style.display = "none";
+
+				// allActive.classList.remove("active");
+				// girl.classList.add("active"); 
+			}else{
+				portfolioBlockAll[i].style.display = "block";
+			}
+	}
+});
+
+guy.addEventListener('click',function(){
+	for (let i = 0; i<portfolioBlockAll.length;i++){
+
+			if(!portfolioBlockAll[i].classList.contains('guy')){
+				portfolioBlockAll[i].style.display = "none";
+
+				// allActive.classList.remove("active");
+				// guy.classList.add("active"); 
+			}else{
+				portfolioBlockAll[i].style.display = "block";
+			}
+	}
+});
+
+// grandmother.addEventListener('click',function(){
+
+// 			if(portfolioBlockAll[i].classList.contains('grandmother')){
+// 				portfolioBlockAll[i].style.display = "none";
+// 				allActive.classList.remove("active");
+// 				grandmother.classList.add("active"); 
+// 			}
+
+// });
+
+// granddad.addEventListener('click',function(){
+
+// 			if(portfolioBlockAll[i].classList.contains('granddad')){
+				
+
+// 				allActive.classList.remove("active");
+// 				granddad.classList.add("active");
+// 				granddad.classList.add("portfolio-no");
+// 			}
+	
+// });
 
