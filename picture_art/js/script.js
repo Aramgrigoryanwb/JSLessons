@@ -63,57 +63,19 @@ let close = document.getElementsByClassName('popup-close')[1];
 			});
 
 //Модальные окна popup-design
-	let buttonOrder = document.getElementsByClassName('button button-order button-design')[0];
-	let buttonOrder1 = document.getElementsByClassName('button button-order button-design')[1];
-	let buttonOrder2 = document.getElementsByClassName('button button-order button-design')[2];	
-	let buttonOrder3 = document.getElementsByClassName('button button-order button-design')[3];
-	let buttonOrder4 = document.getElementsByClassName('button button-order button-design')[4];
-	let buttonOrder5 = document.getElementsByClassName('button button-order button-design')[5];
-	let buttonOrder6 = document.getElementsByClassName('button button-order button-design')[6];
+	let buttonOrder = document.getElementsByClassName('button button-order button-design');
 	let modalPopupDesign = document.getElementsByClassName('popup-design')[0];
 	let close1 = document.getElementsByClassName('popup-close')[2];
 
+	for(let i =0; i<buttonOrder.length;i++){
 
-	 	 buttonOrder.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-			 document.body.style.overflow = 'hidden';
-			 b++;
-	    });
-
-	 	 	 buttonOrder1.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-			 document.body.style.overflow = 'hidden';
- 			b++;
-	    });
-	 	 	buttonOrder2.addEventListener('click', function(){
-	      	modalPopupDesign.style.display  = "block";
-			 document.body.style.overflow = 'hidden';
-			 b++;	 
-	    });
-	 	 	buttonOrder3.addEventListener('click', function(){
+ 		buttonOrder[i].addEventListener('click', function(){
 	      	modalPopupDesign.style.display  = "block";
 			modalPopupDesign.style.zIndex = "10000000"; 
 			document.body.style.overflow = 'hidden';
 			 b++;
-	  	 });
-	   
-	 	 	 buttonOrder4.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-				modalPopupDesign.style.zIndex = "10000000"; 
-				document.body.style.overflow = 'hidden';
-				 b++;
-	    });
-			buttonOrder5.addEventListener('click', function(){
-	      	modalPopupDesign.style.display  = "block";
-			modalPopupDesign.style.zIndex = "10000000";
-			document.body.style.overflow = 'hidden';
-			 b++;
-	    });
-	 	 buttonOrder6.addEventListener('click', function(){
-	      modalPopupDesign.style.display  = "block";
-			document.body.style.overflow = 'hidden'; 
-			 b++;
-	    });
+	 });
+	 	}
 	 	 window.addEventListener('click', function(){
 			  let target = event.target;
 			  if (target == modalPopupDesign){
@@ -127,15 +89,15 @@ let close = document.getElementsByClassName('popup-close')[1];
 			});
 
 //Подгрузка блоков		
-let buttonTransparent = document.getElementsByClassName('button button-transparent button-styles')[0];
-let cards = document.getElementsByClassName('hidden-lg hidden-md hidden-sm hidden-xs styles-2');
+let buttonTransparent = document.getElementsByClassName(' button-transparent ')[0];
+let cards = document.getElementsByClassName('styles-2');
 
 	
 buttonTransparent.addEventListener('click', function(){
 	
 	for(let i = 0; i < cards.length; i++){
-	cards[i].style.cssText = 'display: block !important;';
-	cards[i].classList.add("col-sm-3", "col-sm-offset-0", "col-xs-10", "col-xs-offset-1");	
+	//cards[i].style.cssText = 'display: block !important;';
+	cards[i].classList = "col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 styles-2"	;	
 	
 	}
 	buttonTransparent.style.display = "none";
@@ -161,7 +123,7 @@ buttonTransparent.addEventListener('click', function(){
            
             }
             slides[slideIndex - 1].style.display = 'block';
-          	slides[slideIndex - 1].classList.add("wow","bounceOutRigth");
+          	slides[slideIndex - 1].classList.add("animated","bounceInLeft");
           }
          
           function plusSlides(n){
@@ -205,7 +167,7 @@ buttonTransparent.addEventListener('click', function(){
            		
             }
             slidesMain[slideIndexMain - 1].style.display = 'block';
-         	slidesMain[slideIndexMain - 1].classList.add("wow","bounceInDown");
+         	slidesMain[slideIndexMain - 1].classList.add("animated","bounceInDown");
           }
          
           setInterval (function(){
@@ -312,11 +274,7 @@ buttonTransparent.addEventListener('click', function(){
  	  let clientHeight = document.getElementsByClassName('promo promo-3')[0].clientHeight;
 	  let scrolled =Math.round(document.documentElement.scrollTop);
 	  let scrollHeight = document.documentElement.scrollHeight;
-	  let zyrna = scrollHeight - scrolled;
-	  console.log(scrolled);
-	  console.log(scrollHeight);
-	  console.log(clientHeight);
-	  console.log(zyrna);
+	 
 	  if (scrollHeight - scrolled <= clientHeight && b == 0){
 	  	gift.style.display = "none";
 	  	modal.style.display = "block";
