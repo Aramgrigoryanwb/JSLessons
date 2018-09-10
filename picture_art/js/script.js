@@ -33,8 +33,8 @@ let close = document.getElementsByClassName('popup-close')[1];
 	let close0 = document.getElementsByClassName('popup-close')[0];
 	for(let i =0; i<buttonConsultation.length;i++){
 
-		 buttonConsultation.addEventListener('click',function(){
-	      modalConsultation.style.display = "block";
+		 buttonConsultation[i].addEventListener('click',function(){
+	      modalConsultation[i].style.display = "block";
 					document.body.style.overflow = 'hidden';
 				b+=1;
 	    });
@@ -367,14 +367,7 @@ lovers.addEventListener('click',function(){
 	for (let i = 0; i<portfolioBlockAll.length;i++){
 
 			if(!portfolioBlockAll[i].classList.contains('lovers')){
-				portfolioBlockAll[i].style.display = "none";
-
-
-
-
-
-				// allActive.classList.remove("active");
-				// lovers.classList.add("active"); 
+				portfolioBlockAll[i].style.display = "none"; 
 			}else{
 				portfolioBlockAll[i].style.display = "block";
 			}
@@ -386,9 +379,6 @@ chef.addEventListener('click',function(){
 
 			if(!portfolioBlockAll[i].classList.contains('chef')){
 				portfolioBlockAll[i].style.display = "none";
-
-				// allActive.classList.remove("active");
-				// chef.classList.add("active"); 
 			}else{
 				portfolioBlockAll[i].style.display = "block";
 			}
@@ -400,9 +390,6 @@ girl.addEventListener('click',function(){
 
 			if(!portfolioBlockAll[i].classList.contains('girl')){
 				portfolioBlockAll[i].style.display = "none";
-
-				// allActive.classList.remove("active");
-				// girl.classList.add("active"); 
 			}else{
 				portfolioBlockAll[i].style.display = "block";
 			}
@@ -414,9 +401,6 @@ guy.addEventListener('click',function(){
 
 			if(!portfolioBlockAll[i].classList.contains('guy')){
 				portfolioBlockAll[i].style.display = "none";
-
-				// allActive.classList.remove("active");
-				// guy.classList.add("active"); 
 			}else{
 				portfolioBlockAll[i].style.display = "block";
 			}
