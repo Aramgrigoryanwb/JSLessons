@@ -5,7 +5,7 @@ let gift = document.querySelector('.fixed-gift');
 let modal = document.querySelector('.popup-gift');
 let close = document.getElementsByClassName('popup-close')[1];
 	
-//console.log(dialog);
+
 
 	 gift.addEventListener('click',function(){
       modal.style.display = "block";
@@ -31,10 +31,10 @@ let close = document.getElementsByClassName('popup-close')[1];
 	let buttonConsultation= document.getElementsByClassName('button-consultation');
 	let modalConsultation = document.querySelector('.popup-consultation');
 	let close0 = document.getElementsByClassName('popup-close')[0];
-	for(let i =0; i<buttonConsultation.length;i++){
+	for(let i =0; i < buttonConsultation.length;i++){
 
 		 buttonConsultation[i].addEventListener('click',function(){
-	      modalConsultation[i].style.display = "block";
+	      modalConsultation.style.display = "block";
 					document.body.style.overflow = 'hidden';
 				b+=1;
 	    });
@@ -283,33 +283,45 @@ buttonTransparent.addEventListener('click', function(){
 
 //аккардион
 
+
 let acc = document.getElementsByClassName('accordion-heading');
 let accBlock = document.getElementsByClassName("accordion-block");
 
 for(let i = 0; i<acc.length;i++){
 	accBlock[i].style.display = "none";
 }
-for(let i = 0; i<acc.length;i++){
 
-		if(accBlock[i].style.display == "none"){
-			acc[i].addEventListener('click',function(){
-				accBlock[i].style.display = "block";
-				acc[i].style.color = "#c51abb"; 
-			
-				});
 
-		}
-}
+for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', () => {
+        	 if(accBlock[i].style.display == "block"){
+        	 	console.log('убирайся тварь');
+        	 	accBlock[i].style.display = "none";
+          }    
+     });
+ }
+    
+	
 
-for(let i = 0; i<accBlock.length;i++){
-		if(accBlock[i].style.display == "block"){
-				console.log('click');
-			 	acc[i].addEventListener('click',function(){
-			 	accBlock[i].style.display = "none";	
-			 	acc[i].style.color = "#333333";
-		 	});
-	}
-}	
+
+ for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', () => {
+            for (let i = 0; i < acc.length; i++) {
+            	accBlock[i].style.display = "none"; 
+            }
+         	 accBlock[i].style.display = "block";
+        });
+    }
+
+
+  for (let i = 0; i < acc.length; i++) {
+        acc[i].addEventListener('click', () => {
+            for (let i = 0; i < acc.length; i++) {
+                acc[i].classList.remove('ui-accordion-header-active');
+            }
+            acc[i].classList.add('ui-accordion-header-active');
+        });
+    }
 
 //Модальное окно при посещении сайта более 60 секунд
 let startdate = new Date();
@@ -348,10 +360,16 @@ let portfolioNo = document.getElementsByClassName("portfolio-no")[0];
 let portfolioMenu =  document.getElementsByClassName("portfolio-menu")[0];
 let portfolioBlockAll =document.getElementsByClassName("portfolio-block"); 
   
-  console.log(portfolioMenu.children[6]);
-  console.log(portfolioMenu.children.length);
+let li = portfolioMenu.children;
 
-
+  for (let i = 0; i < li.length; i++) {
+        li[i].addEventListener('click', () => {
+            for (let i = 0; i < li.length; i++) {
+                li[i].classList.remove('active');
+            }
+            li[i].classList.add('active');
+        });
+    }
 
 allActive.addEventListener('click',function(){
 	allActive.classList.add("active"); 
@@ -361,17 +379,6 @@ allActive.addEventListener('click',function(){
 
 			}
 	}
-
-
-
-	for(let i = 0; i<portfolioMenu.children.length;i++){
-		if (portfolioMenu.children[i].classList.contains("active")){
-			portfolioMenu.children[i].classList.remove("active");
-				
-		}else{
-			allActive.classList.add("active");
-		}		
-		}
 				
 	
 });
@@ -388,15 +395,7 @@ lovers.addEventListener('click',function(){
 
 
 	
-		for(let i = 0; i<portfolioMenu.children.length;i++){
-			if (portfolioMenu.children[i].classList.contains("active")){
-				portfolioMenu.children[i].classList.remove("active");
-									
-			}else{
-				lovers.classList.add("active");
-			}
-		}			
-	
+		
 });
 
 chef.addEventListener('click',function(){
@@ -408,14 +407,7 @@ chef.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "block";
 			}			
 	}
-		for(let i = 0; i<portfolioMenu.children.length;i++){
-			if (portfolioMenu.children[i].classList.contains("active")){
-				portfolioMenu.children[i].classList.remove("active");
-										
-			}else{
-				chef.classList.add("active");
-			}
-		}
+	
 });
 
 girl.addEventListener('click',function(){
@@ -427,14 +419,7 @@ girl.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "block";
 			}
 	}
-	for(let i = 0; i<portfolioMenu.children.length;i++){
-			if (portfolioMenu.children[i].classList.contains("active")){
-				portfolioMenu.children[i].classList.remove("active");
-										
-			}else{
-				girl.classList.add("active");
-			}
-		}
+	
 });
 
 guy.addEventListener('click',function(){
@@ -446,14 +431,7 @@ guy.addEventListener('click',function(){
 				portfolioBlockAll[i].style.display = "block";
 			}
 	}
-		for(let i = 0; i<portfolioMenu.children.length;i++){
-			if (portfolioMenu.children[i].classList.contains("active")){
-				portfolioMenu.children[i].classList.remove("active");
-								
-			}else{
-				guy.classList.add("active");
-			}
-		}
+	
 });
 
 grandmother.addEventListener('click',function(){
@@ -463,14 +441,7 @@ grandmother.addEventListener('click',function(){
 			portfolioNo.style.display = "block";
 			
 	}
-	for(let i = 0; i<portfolioMenu.children.length;i++){
-			if (portfolioMenu.children[i].classList.contains("active")){
-				portfolioMenu.children[i].classList.remove("active");
-										
-			}else{
-				grandmother.classList.add("active");
-			}
-		}
+	
 });
 
 granddad.addEventListener('click',function(){
@@ -481,15 +452,60 @@ granddad.addEventListener('click',function(){
 			portfolioNo.style.display = "block";
 			
 	}
-	for(let i = 0; i<portfolioMenu.children.length;i++){
-			if (portfolioMenu.children[i].classList.contains("active")){
-				portfolioMenu.children[i].classList.remove("active");
-										
-			}else{
-				granddad.classList.add("active");
-			 }
-		}
+	
 
 });
+ 
 
-    
+// Формы в модальных окнах
+
+
+
+    // let form = document.getElementsByClassName('form')[1];
+    //    console.log(form);
+    //   console.log(modalPopupDesign);
+
+    // 	input1 = form.getElementsByTagName('input')[0],
+    // 	input2 = form.getElementsByTagName('input')[1],
+    // 	statusMessage = document.createElement('div');
+ 
+    // 	form.addEventListener('submit', function(event){
+    // 		event.preventDefault();
+    // 		form.appendChild(statusMessage);
+    		
+    // 		//AJAX
+    // 		let request =  new XMLHttpRequest();
+    // 		//request.open("POST", 'server.php');
+    // 		//request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+
+    // 		let formData = new FormData(form);
+
+    // 		request.send(formData);
+
+    // 		request.onreadystatechange = function(){
+    // 			if (request.readyState < 4){
+
+    // 				console.log('щас щас');
+
+    // 			}else if(request.readyState === 4){
+    // 				if(request.status === 200 && request.status < 300){
+    // 					console.log('normalin');
+    // 					///;
+    // 				}else{
+    // 					console.log('unnormalin');
+    // 				}
+    // 			}
+    // 		}
+    // 		for (let i = 0; i < input1.length; i++){
+    // 			input1[i].value = '';
+    // 			// очищаем поля ввода
+    // 		}
+    // 			for (let i = 0; i < input2.length; i++){
+    // 			input2[i].value = '';
+    // 			// очищаем поля ввода
+    // 		}
+    // 	});
+
+
+
+    // калькулятор
