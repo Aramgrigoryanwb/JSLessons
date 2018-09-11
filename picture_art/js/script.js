@@ -296,7 +296,9 @@ for (let i = 0; i < acc.length; i++) {
         acc[i].addEventListener('click', () => {
         	 if(accBlock[i].style.display == "block"){
         	 	console.log('убирайся тварь');
+        	 	acc[i].classList.add('ui-accordion-header-active');
         	 	accBlock[i].style.display = "none";
+        	 	 
           }    
      });
  }
