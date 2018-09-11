@@ -295,11 +295,9 @@ for(let i = 0; i<acc.length;i++){
 for (let i = 0; i < acc.length; i++) {
         acc[i].addEventListener('click', () => {
         	 if(accBlock[i].style.display == "block"){
-        	 	console.log('убирайся тварь');
-        	 	acc[i].classList.add('ui-accordion-header-active');
+        		acc[i].classList.remove('ui-accordion-header-active');
         	 	accBlock[i].style.display = "none";
-        	 	 
-          }    
+          } 
      });
  }
     
@@ -312,6 +310,7 @@ for (let i = 0; i < acc.length; i++) {
             	accBlock[i].style.display = "none"; 
             }
          	 accBlock[i].style.display = "block";
+         	 accBlock[i].classList.add("animated","bounceInDown");
         });
     }
 
