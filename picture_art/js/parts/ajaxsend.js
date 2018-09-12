@@ -26,17 +26,12 @@ function ajaxsend(){
   }
 
   for (let i = 0; i < nameInputs.length; i++) {
-      nameInputs[i].addEventListener("blur", function(){
-       nameInputs[i] = nameInputs[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
-     });
-
-     nameInputs[i].addEventListener('keyup', function(){
-       nameInputs[i] = nameInputs[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
-     });
+    nameInputs[i].onBlur = russianWord;
+    nameInputs[i].onkeyup = russianWord;
   }
 
   for (let i = 0; i < formTextareas.length; i++) {
-   formTextareas[i].addEventListener("blur", function(){
+        formTextareas[i].addEventListener("blur", function(){
        formTextareas[i] = formTextareas[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
      });
 
@@ -109,7 +104,9 @@ function ajaxsend(){
       this.value = '';
     }
   }
-
+function russianWord() {
+    this.value = this.value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
+  }
 
 }
 module.exports = ajaxsend;

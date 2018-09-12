@@ -118,21 +118,12 @@
         phoneInputs[_i6].addEventListener('input', mask);
       }
 
-      var _loop4 = function _loop4(_i7) {
-        nameInputs[_i7].addEventListener("blur", function () {
-          nameInputs[_i7] = nameInputs[_i7].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
-        });
-
-        nameInputs[_i7].addEventListener('keyup', function () {
-          nameInputs[_i7] = nameInputs[_i7].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
-        });
-      };
-
       for (var _i7 = 0; _i7 < nameInputs.length; _i7++) {
-        _loop4(_i7);
+        nameInputs[_i7].onBlur = russianWord;
+        nameInputs[_i7].onkeyup = russianWord;
       }
 
-      var _loop5 = function _loop5(_i8) {
+      var _loop4 = function _loop4(_i8) {
         formTextareas[_i8].addEventListener("blur", function () {
           formTextareas[_i8] = formTextareas[_i8].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
         });
@@ -143,7 +134,7 @@
       };
 
       for (var _i8 = 0; _i8 < formTextareas.length; _i8++) {
-        _loop5(_i8);
+        _loop4(_i8);
       }
 
       function requestResponse(event) {
@@ -206,6 +197,9 @@
         if (event.type == 'blur' && this.value.length < 1) {
           this.value = '';
         }
+      }
+      function russianWord() {
+        this.value = this.value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
       }
     }
     module.exports = ajaxsend;
@@ -434,7 +428,7 @@
 
       var li = portfolioMenu.children;
 
-      var _loop6 = function _loop6(i) {
+      var _loop5 = function _loop5(i) {
         li[i].addEventListener('click', function () {
           for (var _i9 = 0; _i9 < li.length; _i9++) {
             li[_i9].classList.remove('active');
@@ -444,7 +438,7 @@
       };
 
       for (var i = 0; i < li.length; i++) {
-        _loop6(i);
+        _loop5(i);
       }
 
       allActive.addEventListener('click', function () {
@@ -604,7 +598,7 @@
 
         for (var i = 0; i < cards.length; i++) {
 
-          cards[i].classList.add("styles-2");
+          cards[i].classList = "col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 styles-2";
         }
         buttonTransparent.style.display = "none";
       });
