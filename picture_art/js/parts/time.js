@@ -8,7 +8,7 @@ let clockStart = startdate.getTime();
 function getSecs() {
   var tSecs = Math.round(initStopwatch());
   let x = setTimeout('getSecs()', 1000); 
-  if (x>10 && x<=11){
+  if (x>60 && x<=61){
     if(modalConsultation.style.display == "block" || modal.style.display == "block" || modalPopupDesign.style.display == "block"){
       modalConsultation.style.display = "none";
   }else{
@@ -18,6 +18,7 @@ function getSecs() {
   }
  }
  getSecs();
-
+ 
 }
+
 module.exports = time;

@@ -674,7 +674,7 @@
       function getSecs() {
         var tSecs = Math.round(initStopwatch());
         var x = setTimeout('getSecs()', 1000);
-        if (x > 10 && x <= 11) {
+        if (x > 60 && x <= 61) {
           if (modalConsultation.style.display == "block" || modal.style.display == "block" || modalPopupDesign.style.display == "block") {
             modalConsultation.style.display = "none";
           } else {
@@ -685,6 +685,7 @@
       }
       getSecs();
     }
+
     module.exports = time;
   }, {}], 14: [function (require, module, exports) {
 
