@@ -138,7 +138,7 @@
         });
 
         formTextareas[_i8].addEventListener('keyup', function () {
-          formTextareas[_i8][_i8] = formTextareas[_i8].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
+          formTextareas[_i8] = formTextareas[_i8].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
         });
       };
 
@@ -556,11 +556,9 @@
       var a = 0;
 
       window.addEventListener('scroll', function () {
-        var clientHeight = document.getElementsByClassName('promo promo-3')[0].clientHeight;
-        var scrolled = Math.round(document.documentElement.scrollTop);
         var scrollHeight = document.documentElement.scrollHeight;
 
-        if (scrollHeight - scrolled <= clientHeight && click == false) {
+        if (window.scrollY + 1 >= scrollHeight - innerHeight && click == false) {
           gift.style.display = "none";
           modal.style.display = "block";
           document.body.style.overflow = 'hidden';
@@ -606,7 +604,7 @@
 
         for (var i = 0; i < cards.length; i++) {
 
-          cards[i].classList = "col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1 styles-2";
+          cards[i].classList.add("styles-2");
         }
         buttonTransparent.style.display = "none";
       });
@@ -673,10 +671,8 @@
     module.exports = popupDesign;
   }, {}], 13: [function (require, module, exports) {
     function time() {
-      //Модальное окно при посещении сайта более 60 секунд
       var startdate = new Date();
       var clockStart = startdate.getTime();
-
       function initStopwatch() {
         var thisTime = new Date();
         return (thisTime.getTime() - clockStart) / 1000;
@@ -684,7 +680,7 @@
       function getSecs() {
         var tSecs = Math.round(initStopwatch());
         var x = setTimeout('getSecs()', 1000);
-        if (x > 60 && x <= 61) {
+        if (x > 10 && x <= 11) {
           if (modalConsultation.style.display == "block" || modal.style.display == "block" || modalPopupDesign.style.display == "block") {
             modalConsultation.style.display = "none";
           } else {

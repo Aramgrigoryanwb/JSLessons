@@ -41,7 +41,7 @@ function ajaxsend(){
      });
 
      formTextareas[i].addEventListener('keyup', function(){
-    formTextareas[i][i] = formTextareas[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
+     formTextareas[i]= formTextareas[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
      });
   }
 

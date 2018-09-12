@@ -39,11 +39,9 @@ let click = false;
 	 
 
  	window.addEventListener('scroll', function() {
- 	  let clientHeight = document.getElementsByClassName('promo promo-3')[0].clientHeight;
-	  let scrolled =Math.round(document.documentElement.scrollTop);
 	  let scrollHeight = document.documentElement.scrollHeight;
 	 
-	  if (scrollHeight - scrolled <= clientHeight && click == false){
+	  if (window.scrollY + 1 >= scrollHeight - innerHeight && click == false){
 	  	gift.style.display = "none";
 	  	modal.style.display = "block";
 	  	document.body.style.overflow = 'hidden';
