@@ -1734,7 +1734,3 @@ h4 {
   opacity: 0;
   animation: fadeInn .5s ease-in 1 forwards;
 }
-
-.is-paused {
-  animation-play-state: paused;
-}

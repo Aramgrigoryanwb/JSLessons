@@ -26,7 +26,7 @@ for (let i = 0; i < acc.length; i++) {
             	accBlock[i].style.display = "none"; 
             }
          	 accBlock[i].style.display = "block";
-         	 accBlock[i].classList.add("animated","bounceInDown");
+         	 accBlock[i].classList.add("fade-inn");
         });
     }
 

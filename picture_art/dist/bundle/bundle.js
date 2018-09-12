@@ -74,7 +74,7 @@
             accBlock[_i4].style.display = "none";
           }
           accBlock[_i2].style.display = "block";
-          accBlock[_i2].classList.add("animated", "bounceInDown");
+          accBlock[_i2].classList.add("fade-inn");
         });
       };
 
