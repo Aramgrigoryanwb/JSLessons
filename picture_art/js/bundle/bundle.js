@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function(){
     let popupConsultation = require('../parts/popupConsultation.js');
     let popupDesign = require('../parts/popupDesign.js');
     let upslider = require('../parts/upslider.js');
-    let windows = require('../parts/windows.js');
+
 
     accordion();
     ajaxsend();
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function(){
     popupConsultation();
     popupDesign();
     upslider();
-    windows();
+
 
 });
 
@@ -54,7 +54,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
 
 
-},{"../parts/accordion.js":2,"../parts/ajaxsend.js":3,"../parts/block.js":4,"../parts/calc.js":5,"../parts/downslider.js":6,"../parts/filter.js":7,"../parts/gift.js":8,"../parts/hamburg.js":9,"../parts/load.js":10,"../parts/popupConsultation.js":11,"../parts/popupDesign.js":12,"../parts/time.js":13,"../parts/upslider.js":14,"../parts/windows.js":15}],2:[function(require,module,exports){
+},{"../parts/accordion.js":2,"../parts/ajaxsend.js":3,"../parts/block.js":4,"../parts/calc.js":5,"../parts/downslider.js":6,"../parts/filter.js":7,"../parts/gift.js":8,"../parts/hamburg.js":9,"../parts/load.js":10,"../parts/popupConsultation.js":11,"../parts/popupDesign.js":12,"../parts/time.js":13,"../parts/upslider.js":14}],2:[function(require,module,exports){
 //аккардион
 function accordion(){
 let acc = document.getElementsByClassName('accordion-heading');
@@ -317,8 +317,8 @@ function calc(){
 	        material = document.getElementById('material'),
 	        options = document.getElementById('options'),
 	        coupon = document.getElementsByClassName('promocode')[0],
-	        totalValue = document.getElementsByClassName('calc-price')[0];
-          total = 0;
+	        totalValue = document.getElementsByClassName('calc-price')[0],
+            total = 0;
 			let reg = /IWANTPOPART/;
 
            
@@ -581,6 +581,27 @@ let click = false;
         click = true;
       });
     }
+    let a = 0;
+	
+	 
+
+ 	window.addEventListener('scroll', function() {
+ 	  let clientHeight = document.getElementsByClassName('promo promo-3')[0].clientHeight;
+	  let scrolled =Math.round(document.documentElement.scrollTop);
+	  let scrollHeight = document.documentElement.scrollHeight;
+	 
+	  if (scrollHeight - scrolled <= clientHeight && click == false){
+	  	gift.style.display = "none";
+	  	modal.style.display = "block";
+	  	document.body.style.overflow = 'hidden';
+	  	a += 1;
+	  	if(a>4){
+	  		modal.style.display = "none";	
+	  		document.body.style.overflow = '';
+	  	}
+	   }
+	
+	 });
 }
  module.exports = gift;
 },{}],9:[function(require,module,exports){
@@ -742,30 +763,4 @@ module.exports = time;
         },3000);
         }
          module.exports = upslider;
-},{}],15:[function(require,module,exports){
-//Модальное окно при пролистывании
-function windows(){
-	let a = 0;
-	
-	 
-
- 	window.addEventListener('scroll', function() {
- 	  let clientHeight = document.getElementsByClassName('promo promo-3')[0].clientHeight;
-	  let scrolled =Math.round(document.documentElement.scrollTop);
-	  let scrollHeight = document.documentElement.scrollHeight;
-	 
-	  if (scrollHeight - scrolled <= clientHeight && click == false){
-	  	gift.style.display = "none";
-	  	modal.style.display = "block";
-	  	document.body.style.overflow = 'hidden';
-	  	a += 1;
-	  	if(a>4){
-	  		modal.style.display = "none";	
-	  		document.body.style.overflow = '';
-	  	}
-	   }
-	
-	 });
- }
- module.exports = windows;
 },{}]},{},[1]);

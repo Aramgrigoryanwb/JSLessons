@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', function(){
     let popupConsultation = require('../parts/popupConsultation.js');
     let popupDesign = require('../parts/popupDesign.js');
     let upslider = require('../parts/upslider.js');
-    let windows = require('../parts/windows.js');
+
 
     accordion();
     ajaxsend();
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function(){
     popupConsultation();
     popupDesign();
     upslider();
-    windows();
+
 
 });
 

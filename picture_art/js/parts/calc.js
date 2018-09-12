@@ -5,8 +5,8 @@ function calc(){
 	        material = document.getElementById('material'),
 	        options = document.getElementById('options'),
 	        coupon = document.getElementsByClassName('promocode')[0],
-	        totalValue = document.getElementsByClassName('calc-price')[0];
-          total = 0;
+	        totalValue = document.getElementsByClassName('calc-price')[0],
+            total = 0;
 			let reg = /IWANTPOPART/;
 
            
