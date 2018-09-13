@@ -21,13 +21,11 @@
       var ajaxsend = require('../parts/ajaxsend.js');
       var block = require('../parts/block.js');
       var calc = require('../parts/calc.js');
-      var time = require('../parts/time.js');
       var downslider = require('../parts/downslider.js');
       var filter = require('../parts/filter.js');
       var gift = require('../parts/gift.js');
       var hamburg = require('../parts/hamburg.js');
       var load = require('../parts/load.js');
-      var popupConsultation = require('../parts/popupConsultation.js');
       var popupDesign = require('../parts/popupDesign.js');
       var upslider = require('../parts/upslider.js');
 
@@ -35,17 +33,15 @@
       ajaxsend();
       block();
       calc();
-      time();
       downslider();
       filter();
       gift();
       hamburg();
       load();
-      popupConsultation();
       popupDesign();
       upslider();
     });
-  }, { "../parts/accordion.js": 2, "../parts/ajaxsend.js": 3, "../parts/block.js": 4, "../parts/calc.js": 5, "../parts/downslider.js": 6, "../parts/filter.js": 7, "../parts/gift.js": 8, "../parts/hamburg.js": 9, "../parts/load.js": 10, "../parts/popupConsultation.js": 11, "../parts/popupDesign.js": 12, "../parts/time.js": 13, "../parts/upslider.js": 14 }], 2: [function (require, module, exports) {
+  }, { "../parts/accordion.js": 2, "../parts/ajaxsend.js": 3, "../parts/block.js": 4, "../parts/calc.js": 5, "../parts/downslider.js": 6, "../parts/filter.js": 7, "../parts/gift.js": 8, "../parts/hamburg.js": 9, "../parts/load.js": 10, "../parts/popupDesign.js": 11, "../parts/upslider.js": 12 }], 2: [function (require, module, exports) {
     //аккардион
     function accordion() {
       var acc = document.getElementsByClassName('accordion-heading');
@@ -563,6 +559,38 @@
           }
         }
       });
+
+      var x = setTimeout(getSec, 60000);
+      function getSec() {
+        if (click === true) {
+          modalConsultation.style.display = "none";
+        } else {
+          modalConsultation.style.display = "block";
+          document.body.style.overflow = 'hidden';
+        }
+      }
+      var buttonConsultation = document.getElementsByClassName('button-consultation');
+      var modalConsultation = document.querySelector('.popup-consultation');
+      var close0 = document.getElementsByClassName('popup-close')[0];
+      for (var _i10 = 0; _i10 < buttonConsultation.length; _i10++) {
+        buttonConsultation[_i10].addEventListener('click', function () {
+          modalConsultation.style.display = "block";
+          document.body.style.overflow = 'hidden';
+        });
+      }
+
+      window.addEventListener('click', function () {
+        var target = event.target;
+        if (target == modalConsultation) {
+          modalConsultation.style.display = "none";
+          document.body.style.overflow = '';
+        }
+      });
+
+      close0.addEventListener('click', function () {
+        modalConsultation.style.display = "none";
+        document.body.style.overflow = '';
+      });
     }
     module.exports = gift;
   }, {}], 9: [function (require, module, exports) {
@@ -605,35 +633,6 @@
     }
     module.exports = load;
   }, {}], 11: [function (require, module, exports) {
-    function popupConsultation() {
-
-      //Модальные окна  popup-consultation
-      var buttonConsultation = document.getElementsByClassName('button-consultation');
-      var modalConsultation = document.querySelector('.popup-consultation');
-      var close0 = document.getElementsByClassName('popup-close')[0];
-      for (var i = 0; i < buttonConsultation.length; i++) {
-
-        buttonConsultation[i].addEventListener('click', function () {
-          modalConsultation.style.display = "block";
-          document.body.style.overflow = 'hidden';
-        });
-      }
-
-      window.addEventListener('click', function () {
-        var target = event.target;
-        if (target == modalConsultation) {
-          modalConsultation.style.display = "none";
-          document.body.style.overflow = '';
-        }
-      });
-
-      close0.addEventListener('click', function () {
-        modalConsultation.style.display = "none";
-        document.body.style.overflow = '';
-      });
-    }
-    module.exports = popupConsultation;
-  }, {}], 12: [function (require, module, exports) {
     //calc
     function popupDesign() {
 
@@ -663,31 +662,7 @@
       });
     }
     module.exports = popupDesign;
-  }, {}], 13: [function (require, module, exports) {
-    function time() {
-      var startdate = new Date();
-      var clockStart = startdate.getTime();
-      function initStopwatch() {
-        var thisTime = new Date();
-        return (thisTime.getTime() - clockStart) / 1000;
-      }
-      function getSecs() {
-        var tSecs = Math.round(initStopwatch());
-        var x = setTimeout('getSecs()', 1000);
-        if (x > 60 && x <= 61) {
-          if (modalConsultation.style.display == "block" || modal.style.display == "block" || modalPopupDesign.style.display == "block") {
-            modalConsultation.style.display = "none";
-          } else {
-            modalConsultation.style.display = "block";
-            document.body.style.overflow = 'hidden';
-          }
-        }
-      }
-      getSecs();
-    }
-
-    module.exports = time;
-  }, {}], 14: [function (require, module, exports) {
+  }, {}], 12: [function (require, module, exports) {
 
     function upslider() {
       var slideIndexMain = 1,
