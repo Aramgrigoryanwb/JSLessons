@@ -128,13 +128,8 @@ function ajaxsend(){
   }
 
   for (let i = 0; i < formTextareas.length; i++) {
-        formTextareas[i].addEventListener("blur", function(){
-       formTextareas[i] = formTextareas[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
-     });
-
-     formTextareas[i].addEventListener('keyup', function(){
-     formTextareas[i]= formTextareas[i].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig,"");
-     });
+     formTextareas[i].onBlur = russianWord;
+    formTextareas[i].onkeyup = russianWord;
   }
 
 

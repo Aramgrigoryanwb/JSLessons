@@ -119,18 +119,9 @@
         nameInputs[_i7].onkeyup = russianWord;
       }
 
-      var _loop4 = function _loop4(_i8) {
-        formTextareas[_i8].addEventListener("blur", function () {
-          formTextareas[_i8] = formTextareas[_i8].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
-        });
-
-        formTextareas[_i8].addEventListener('keyup', function () {
-          formTextareas[_i8] = formTextareas[_i8].value.replace(/[^\йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ]/ig, "");
-        });
-      };
-
       for (var _i8 = 0; _i8 < formTextareas.length; _i8++) {
-        _loop4(_i8);
+        formTextareas[_i8].onBlur = russianWord;
+        formTextareas[_i8].onkeyup = russianWord;
       }
 
       function requestResponse(event) {
@@ -424,7 +415,7 @@
 
       var li = portfolioMenu.children;
 
-      var _loop5 = function _loop5(i) {
+      var _loop4 = function _loop4(i) {
         li[i].addEventListener('click', function () {
           for (var _i9 = 0; _i9 < li.length; _i9++) {
             li[_i9].classList.remove('active');
@@ -434,7 +425,7 @@
       };
 
       for (var i = 0; i < li.length; i++) {
-        _loop5(i);
+        _loop4(i);
       }
 
       allActive.addEventListener('click', function () {
