@@ -312,7 +312,7 @@ function calc(){
            
 
     size.addEventListener('change', function() {
-        total = ((size.value * material.value) + options.value);
+        total = ((+size.value * +material.value) + +options.value);
         if (size.value ==0 || material.value == 0) {
             totalValue.innerHTML = '';
         } else {
@@ -325,7 +325,7 @@ function calc(){
     });
 
     material.addEventListener('change', function() {
-        total = ((size.value * material.value) + options.value);
+        total = ((+size.value * +material.value) + +options.value);
         if (size.value ==0 || material.value == 0) {
             totalValue.innerHTML = '';
         } else {
@@ -338,7 +338,7 @@ function calc(){
     });
 
     options.addEventListener('change', function() {
-        total = ((size.value * material.value) + options.value);
+        total = ((+size.value * +material.value) + +options.value);
         if (size.value == '' || material.value == '') {
             totalValue.innerHTML = '';
         } else {
@@ -352,7 +352,7 @@ function calc(){
 
 
     coupon.addEventListener('change', function() {
-        total = ((size.value * material.value) + options.value);
+        total = ((+size.value * +material.value) + +options.value);
 
         if (size.value == '' || material.value == ''){
             totalValue.innerHTML = '';

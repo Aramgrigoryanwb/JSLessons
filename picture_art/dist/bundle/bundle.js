@@ -296,7 +296,7 @@
       var reg = /IWANTPOPART/;
 
       size.addEventListener('change', function () {
-        total = size.value * material.value + options.value;
+        total = +size.value * +material.value + +options.value;
         if (size.value == 0 || material.value == 0) {
           totalValue.innerHTML = '';
         } else {
@@ -309,7 +309,7 @@
       });
 
       material.addEventListener('change', function () {
-        total = size.value * material.value + options.value;
+        total = +size.value * +material.value + +options.value;
         if (size.value == 0 || material.value == 0) {
           totalValue.innerHTML = '';
         } else {
@@ -322,7 +322,7 @@
       });
 
       options.addEventListener('change', function () {
-        total = size.value * material.value + options.value;
+        total = +size.value * +material.value + +options.value;
         if (size.value == '' || material.value == '') {
           totalValue.innerHTML = '';
         } else {
@@ -335,7 +335,7 @@
       });
 
       coupon.addEventListener('change', function () {
-        total = size.value * material.value + options.value;
+        total = +size.value * +material.value + +options.value;
 
         if (size.value == '' || material.value == '') {
           totalValue.innerHTML = '';
